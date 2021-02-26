@@ -1,5 +1,6 @@
 import sys
 from os import system, name
+import math
 
 if not (name == 'posix'):
 	print('Only runs in unix')
