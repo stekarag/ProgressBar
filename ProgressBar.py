@@ -1,34 +1,28 @@
 import sys
-from os import system, name
-import math
-
-if not (name == 'posix'):
-	print('Only runs in unix')
-	sys.exit()
-
 import math
 import random
+from time import sleep
 
-s = 10000 
+c = 100
 
-for i in range(s):
-	random.seed(i)
-	random.randint(0,100) 
-	_ = system('clear')	
-	f = i/s
-	pc = int(round(f,2)*100)
-	bs = math.floor(pc/10)
-	i = bs
-	j = 10 - i
+for i in range(c):
+	rep = i + 1
+	sleep(0.25) 	
+	flt = rep/c
+	percentage = math.ceil(flt*100)
+	bs = math.floor(percentage/10)
+	k = bs
+	j = 10 - k
 	stars = ''
-	while (i > 0):
+	while (k > 0):
 		stars = stars + '*'
-		i -= 1
+		k -= 1
 	while (j > 0):
-		stars = stars + ' '
+		stars = stars + '-'
 		j -= 1
 	bar = '['+stars+']'
-	print(bar + ' ' + str(pc)+'% complete') 
+	print(bar + ' ' + str(percentage)+'% complete.', end="\r", flush=True)
 
-_ = system('clear')	
-print('Process completed')
+
+print("")
+print('Process ended!')
