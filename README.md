@@ -1,3 +1,2 @@
 # ProgressBar
-A simple command line progress bar for Unix systems
-
+A simple command line progress bar written in Python.
